@@ -24,8 +24,22 @@
         <section class="jumbotron text-center">
           <div class="container">
             <h1 class="jumbotron-heading">Dojo Fruits</h1>
-            <p>Please figure out how to display the images here...</p>
-
+            <table class="table">
+              <tr>
+                <th>Fruit</th>
+                <th>Description</th>
+                <!-- <th>Picture</th> -->
+              </tr>
+              {% for fruits in fruit_options %}
+                {% for key in fruits %}
+                <tr>
+                  <td><img src="static/img/{{key}}.png" alt=""></td>
+                  <td>{{ key|title }}</td>
+                  <td>{{ fruits[key] }}</td>
+                </tr>
+                {% endfor %}
+              {% endfor %}
+            </table>
             <p>
               <a href="/" class="btn btn-primary my-2">Go back</a>
             </p>
